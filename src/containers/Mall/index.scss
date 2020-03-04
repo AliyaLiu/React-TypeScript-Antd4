@@ -1,0 +1,22 @@
+.container{
+    text-align: center;
+    padding:200px;
+    color:blue;
+    font-size: 30px;
+    .tab{
+        margin-right:30px;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        .linkInner{
+            $width:180px;
+            width:$width;
+            height:$width;
+            border:1px solid #ccc;
+            display: inline-block;
+        }
+    }
+}

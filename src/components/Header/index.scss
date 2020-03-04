@@ -1,0 +1,30 @@
+@import "~STYLES/base.scss";
+.container {
+	background: #0ba29a;
+	width: 100%;
+	$width: 122px;
+	.headerInner {
+		width: $contentWidth;
+		margin: 0 auto;
+		$height: 72px;
+		height: $height;
+		line-height: $height;
+	}
+	.logo {
+		width: $width;
+		color: #fff;
+		font-size: 30px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.tab {
+		width: $width;
+		text-align: center;
+		color: #fff;
+		display: inline-block;
+		font-size: 18px;
+	}
+	.active {
+		background: #3fb1aa;
+	}
+}

@@ -1,0 +1,15 @@
+//次文件定义全局公用class
+
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.cf:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    *zoom: 1;
+}

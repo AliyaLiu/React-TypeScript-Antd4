@@ -1,0 +1,10 @@
+build/
+dist/
+node_modules/
+config/
+public/
+scripts/
+server.js
+mock/
+src/components/Iconfont
+*.scss

@@ -1,0 +1,17 @@
+.container{
+    text-align: center;
+    font-size:30px;
+    .icon{
+        text-align: left;
+        padding-left:30px;
+        padding-top:20px;
+        margin-bottom: 40px;
+        svg{
+            font-size: 30px;
+            cursor: pointer;
+        }
+    }
+    i{
+        color:red;
+    }
+}

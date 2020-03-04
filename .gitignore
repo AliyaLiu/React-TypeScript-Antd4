@@ -1,0 +1,8 @@
+/node_modules/
+.project
+*.log.*
+.vscode/
+/sheet/
+/dist/
+coverage/
+yarn-error.log

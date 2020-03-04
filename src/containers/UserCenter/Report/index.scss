@@ -1,0 +1,11 @@
+.container{
+    position: relative;
+    .swipe{
+        position: absolute;
+        $width:100px;
+        width: $width;
+        height:$width;
+        border-radius: 50%;
+        background:red;
+    }
+}

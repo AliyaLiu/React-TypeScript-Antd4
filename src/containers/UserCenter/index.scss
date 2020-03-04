@@ -1,0 +1,30 @@
+.container {
+	text-align: center;
+	color: #ff8f00;
+	font-size: 30px;
+	.tab {
+		margin-right: 30px;
+	}
+	ul {
+		display: flex;
+		flex-direction: row;
+		$height: 80px;
+		height: $height;
+		line-height: $height;
+		background: #7134af;
+		li {
+			width: 200px;
+            height: $height;
+    		line-height: $height;
+			text-align: center;
+			.link {
+				color: #fff;
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		.active {
+			background: red;
+		}
+	}
+}

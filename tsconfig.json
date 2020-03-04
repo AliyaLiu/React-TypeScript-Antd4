@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"target": "es5",
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"jsx": "react",
+		"baseUrl": ".",
+		"skipLibCheck": true,
+        "strictNullChecks": true,
+		"lib": ["ES2015", "es6", "dom"],
+		"paths": {
+			"@containers/*": ["./src/containers/*"],
+			"@store/*": ["./src/store/*"],
+			"@components/*": ["./src/components/*"],
+			"@styles/*": ["./src/styles/*"],
+			"@utils/*": ["./src/utils/*"],
+			"@assets/*": ["./src/assets/*"],
+			"@routers/*": ["./src/router/*"]
+		}
+	},
+	"include": ["./src/**/*"],
+    "exclude": ["./src/components/Iconfont/source/*"]
+}
