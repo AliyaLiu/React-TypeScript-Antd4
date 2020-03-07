@@ -40,8 +40,8 @@ class Report extends Component<RouteProps, State> {
         const {left} = this.state;
         return (
             <div className={styles.container}>
-                {/* 学生成绩单
-                <div className={styles.swipe} style={{left}} /> */}
+                学生成绩单
+                <div className={styles.swipe} style={{left}} />
             </div>
         );
     }

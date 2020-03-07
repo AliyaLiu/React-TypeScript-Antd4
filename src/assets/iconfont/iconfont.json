@@ -1,0 +1,275 @@
+{
+  "id": "1674761",
+  "name": "微信-demo",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "104840",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "354566",
+      "name": "关闭",
+      "font_class": "iconfontclose",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "991642",
+      "name": "最小化",
+      "font_class": "zuixiaohua",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "1004644",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "1027779",
+      "name": "最小化3",
+      "font_class": "zuixiaohua3",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "1229713",
+      "name": "搜索",
+      "font_class": "sousuo1",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "1494664",
+      "name": "添加",
+      "font_class": "tianjia",
+      "unicode": "e60a",
+      "unicode_decimal": 58890
+    },
+    {
+      "icon_id": "2019064",
+      "name": "添加好友",
+      "font_class": "tianjiahaoyou",
+      "unicode": "e7aa",
+      "unicode_decimal": 59306
+    },
+    {
+      "icon_id": "3096642",
+      "name": "关闭",
+      "font_class": "close-b",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "4544042",
+      "name": "添加",
+      "font_class": "tianjia1",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5439968",
+      "name": "搜索",
+      "font_class": "sousuo2",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "6047788",
+      "name": "添加",
+      "font_class": "tianjia2",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "6275362",
+      "name": "添加",
+      "font_class": "icon-test10",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "7515698",
+      "name": "关闭",
+      "font_class": "guanbi",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "8165740",
+      "name": "添加好友",
+      "font_class": "tianjiahaoyou1",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "9097093",
+      "name": "置顶",
+      "font_class": "ziyuan",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "9645786",
+      "name": "添加",
+      "font_class": "tianjia3",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "10651927",
+      "name": "删除",
+      "font_class": "shanchu-",
+      "unicode": "e64e",
+      "unicode_decimal": 58958
+    },
+    {
+      "icon_id": "11521660",
+      "name": "关闭",
+      "font_class": "guanbi1",
+      "unicode": "e784",
+      "unicode_decimal": 59268
+    },
+    {
+      "icon_id": "194526",
+      "name": "设置",
+      "font_class": "shezhi",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "435995",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e7f3",
+      "unicode_decimal": 59379
+    },
+    {
+      "icon_id": "774525",
+      "name": "意见反馈",
+      "font_class": "yijianfankui",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "1903298",
+      "name": "头像 女孩",
+      "font_class": "icon-test",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "1904042",
+      "name": "头像 男孩",
+      "font_class": "icon-test1",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "1904067",
+      "name": "头像 男孩",
+      "font_class": "icon-test2",
+      "unicode": "e667",
+      "unicode_decimal": 58983
+    },
+    {
+      "icon_id": "1904339",
+      "name": "头像 男孩",
+      "font_class": "icon-test3",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "1905159",
+      "name": "头像 女孩",
+      "font_class": "icon-test4",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "1905487",
+      "name": "头像 女孩",
+      "font_class": "icon-test5",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "1907965",
+      "name": "头像 女孩",
+      "font_class": "icon-test6",
+      "unicode": "e66d",
+      "unicode_decimal": 58989
+    },
+    {
+      "icon_id": "1908406",
+      "name": "头像 女孩",
+      "font_class": "icon-test7",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "1908550",
+      "name": "头像 男孩",
+      "font_class": "icon-test8",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "1908929",
+      "name": "头像 男孩",
+      "font_class": "icon-test9",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "2006224",
+      "name": "设置",
+      "font_class": "shezhi1",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "2119413",
+      "name": "好友列表",
+      "font_class": "linkman-contacts_ico",
+      "unicode": "e66b",
+      "unicode_decimal": 58987
+    },
+    {
+      "icon_id": "3090321",
+      "name": "人物-头像",
+      "font_class": "character-avatar",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "3902191",
+      "name": "设置",
+      "font_class": "tubiaosvg-",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "5799980",
+      "name": "设置",
+      "font_class": "yunliankeji_gongyinglianfuben",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "8679371",
+      "name": "意见",
+      "font_class": "yijian",
+      "unicode": "e68a",
+      "unicode_decimal": 59018
+    }
+  ]
+}

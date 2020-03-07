@@ -15,10 +15,10 @@ interface Props {
 export default class Iconfont extends Component<Props> {
 	constructor(props:Props) {
 		super(props);
-		if (props.global) {
-			require("https://static.leke.cn/styles/common/iconfont/iconfont.css");
-			return;
-		}
+		// if (props.global) {
+		// 	require("https://static.leke.cn/styles/common/iconfont/iconfont.css");
+		// 	return;
+		// }
 		require("./source/iconfont.js");
 	}
 

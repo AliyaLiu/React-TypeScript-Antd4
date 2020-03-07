@@ -13,7 +13,7 @@
   "author": "wangzhehong@cnstrong.cn",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.leke.cn/frontend/create-react-project.git"
+    "url": ""
   },
   "license": "ISC",
   "devDependencies": {
@@ -83,28 +83,28 @@
     "webpack-require-http": "^0.4.3"
   },
   "dependencies": {
-    "@types/react": "16.8.3",
-    "@types/react-dom": "^16.8.3",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
     "@types/react-loadable": "^5.5.0",
     "@types/react-redux": "^7.0.1",
-    "@types/react-router-dom": "^4.3.1",
+    "@types/react-router-dom": "^5.1.3",
     "@typescript-eslint/parser": "^1.6.0",
-    "antd": "3.8.2",
+    "antd": "^4.0.0",
     "antd-mobile": "^2.2.8",
     "axios": "^0.18.0",
     "moment": "^2.22.2",
     "postcss-pxtorem": "^4.0.1",
     "qs": "^6.6.0",
-    "react": "16.8.3",
-    "react-dom": "^16.5.2",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
     "react-loadable": "^5.5.0",
     "react-redux": "^5.0.6",
-    "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "scheduler": "^0.14.0",
-    "typescript": "^3.4.2",
+    "typescript": "^3.8.3",
     "whatwg-fetch": "^2.0.4"
   }
 }

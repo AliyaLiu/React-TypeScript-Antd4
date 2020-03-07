@@ -48,7 +48,7 @@ class Home extends Component<Props> {
         } = this.props.root;
         return (
             <div className={styles.container}>
-                {/* <Iconfont iconId='global-save' global/>
+                <Iconfont iconId='global-save' global/>
                 <Row>
                     <Col span={6}>col-6</Col>
                     <Col span={6}>col-6</Col>
@@ -73,7 +73,7 @@ class Home extends Component<Props> {
                     <p>{userInfo.content}</p>
                     <p>{userInfo.content}</p>
                 </Card>}
-                <div>{moment().format("YYYY-MM-DD HH:mm:ss")}</div> */}
+                <div>{moment().format("YYYY-MM-DD HH:mm:ss")}</div>
             </div>
         );
     }

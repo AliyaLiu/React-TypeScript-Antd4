@@ -4,7 +4,7 @@ const client = require("./webpack.config.base.js");
 const merge = require("webpack-merge");
 const base = require("./webpack.config.base");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const host = "webapp.leke.cn";
+// const host = "webapp.leke.cn";
 module.exports = merge(base, {
 	entry: "./src/mount.tsx",
 	output: {
@@ -19,13 +19,13 @@ module.exports = merge(base, {
 		contentBase: "./dist",
 		hot: true,
 		disableHostCheck: true,
-        host: '0.0.0.0',
+        // host: '0.0.0.0',
 		proxy: {
 			"/auth": {
-				target: "https://webapp.leke.cn",
-				headers: {
-					host: host
-				},
+				// target: "https://webapp.leke.cn",
+				// headers: {
+				// 	host: host
+				// },
 				changeOrigin: true,
 				secure: false,
 				cookieDomainRewrite: {

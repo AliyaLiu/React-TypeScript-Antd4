@@ -6,29 +6,26 @@ import {withRouter} from "react-router";
 import {routerConfig} from "@routers/router.config";
 import RouterProps from '@routers/type';
 //style
-import styles from "./index.scss";
+// import styles from "./index.scss";
 
 class Main extends Component<RouterProps> {
     render() {
         return (
-            <div className={`${styles.container}`}>
-                {/* <Header location={this.props.location} /> */}
-                <div className={styles.content}>
-                    <Switch>
-                        {routerConfig.map((item, index) => {
-                            const {path, component, exact} = item;
-                            return (
-                                <Route
-                                    key={index}
-                                    path={path}
-                                    component={component}
-                                    exact={exact}
-                                />
-                            );
-                        })}
-                    </Switch>
-                </div>
-            </div>
+            <>
+                <Switch>
+                    {routerConfig.map((item, index) => {
+                        const {path, component, exact} = item;
+                        return (
+                            <Route
+                                key={index}
+                                path={path}
+                                component={component}
+                                exact={exact}
+                            />
+                        );
+                    })}
+                </Switch>
+            </>
         );
     }
 }

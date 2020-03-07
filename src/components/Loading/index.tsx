@@ -12,7 +12,6 @@ const Loading: FC<LoadingComponentProps> = (mes) => {
     return (
         <div className={styles.container}>
             <div className={styles.inner}>
-                {/* <div className={styles.boxLoading} /> */}
                 <Spin size="large" />
                 <div className={styles.title}>努力加载中...</div>
             </div>

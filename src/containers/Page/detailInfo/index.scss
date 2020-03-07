@@ -1,0 +1,23 @@
+.container{
+    height: 100%;
+    vertical-align: middle;
+    background-color: #fafafa;
+    overflow-y: auto;
+    position: relative;
+    .header{
+        position: fixed; 
+        top: 0;
+        right: 0;
+        left: 5rem; 
+        .rightIcon{
+            position: absolute;
+            right: 0;
+            line-height: 0.4rem;
+            i{
+                font-size: 0.3rem;
+                margin: 0 0.1rem;
+            }
+        } 
+        
+    }
+}

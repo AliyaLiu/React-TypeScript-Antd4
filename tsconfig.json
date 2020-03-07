@@ -14,7 +14,8 @@
 		"jsx": "react",
 		"baseUrl": ".",
 		"skipLibCheck": true,
-        "strictNullChecks": true,
+		"strictNullChecks": true,
+		"resolveJsonModule": true,
 		"lib": ["ES2015", "es6", "dom"],
 		"paths": {
 			"@containers/*": ["./src/containers/*"],
@@ -23,7 +24,8 @@
 			"@styles/*": ["./src/styles/*"],
 			"@utils/*": ["./src/utils/*"],
 			"@assets/*": ["./src/assets/*"],
-			"@routers/*": ["./src/router/*"]
+			"@routers/*": ["./src/router/*"],
+			"@mock/*": ["./src/mock/*"],
 		}
 	},
 	"include": ["./src/**/*"],

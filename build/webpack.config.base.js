@@ -23,7 +23,8 @@ module.exports = {
 			"@styles": "src/styles",
 			"@utils": "src/utils",
 			"@routers": "src/router",
-			"@assets": "src/assets"
+			"@assets": "src/assets",
+			"@mock": "src/mock"
 		},
 		extensions: [
 			".web.js",
