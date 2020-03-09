@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './index.scss';
 import '@assets/iconfont/iconfont.css';
+import DetailInfo from '@mock/message/消息内容.json';
 
-export default function Message(){
-    const [messageName, setMessageName] = useState("用户1");
+const DetaiInfo = (props: any) => {
+    const { checkUser } = props;
+    // const [messageName, setMessageName] = useState("用户1");
    
     return (
         <div className={ styles["container"] }>
@@ -13,8 +15,12 @@ export default function Message(){
                     <i className="iconfont icon-zuixiaohua"></i>
                     <i className="iconfont icon-guanbi1"></i>
                 </div>
-                <p>{ messageName }</p>
+                <p>{ checkUser.name }</p>
+            </div>
+            <div className={ styles["chatList"] }>
+                111
             </div>
         </div>
     );
-};
+}
+export default DetaiInfo;

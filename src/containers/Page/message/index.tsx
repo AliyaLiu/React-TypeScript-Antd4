@@ -6,7 +6,8 @@ import MessageList from '@mock/message/消息列表.json';
 import { Input } from 'antd';
 const { Search } = Input;
 
-export default function Message(){
+
+const Message = () => {
     console.log(MessageList);
     const [checkUser, setCheckUser] = useState(MessageList[0]);
 
@@ -40,7 +41,8 @@ export default function Message(){
                 }
             </ul>
             </div>
-            {/* <DetailInfo checkUser = { checkUser }/> */}
+            <DetailInfo checkUser = { checkUser }/>
         </>
     );
-};
+}
+export default Message;
