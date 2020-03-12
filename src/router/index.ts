@@ -28,6 +28,12 @@ export const Friends = Loadable({
     loading: Loading,
     timeout: timeout
 });
+//拖拽
+export const DragPage = Loadable({
+    loader: () => import("@containers/dragDemo"),
+    loading: Loading,
+    timeout: timeout
+})
 // export const ProductDetail = Loadable({
 //     loader: () => import("@containers/Mall/ProductDetail"),
 //     loading: Loading,

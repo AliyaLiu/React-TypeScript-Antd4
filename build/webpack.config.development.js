@@ -6,7 +6,10 @@ const base = require("./webpack.config.base");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 // const host = "webapp.leke.cn";
 module.exports = merge(base, {
-	entry: "./src/mount.tsx",
+	// entry: "./src/mount.tsx",
+	entry: {
+		bundle: ['@babel/polyfill', path.resolve(__dirname, "../src/mount.tsx")]
+	},
 	output: {
 		path: path.resolve(__dirname, "../dist"),
 		filename: "js/[name].js",

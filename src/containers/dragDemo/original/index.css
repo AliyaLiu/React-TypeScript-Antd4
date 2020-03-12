@@ -1,0 +1,63 @@
+.moveConteng{ position: relative; }
+.moveConteng ul{ 
+    list-style: none; 
+    user-select: none; 
+    width: 20rem; 
+    height: 20rem;
+    padding: 0;
+    margin: 0;
+}
+.moveConteng ul li{
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    border: 1px dashed gray;
+    color: black;
+    background-color: #fff;
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    line-height: 3rem;
+    list-style: none;
+    margin-top: 0;
+    cursor: move;
+}
+.moveConteng ul  .dragMove{
+    opacity: 0;
+}
+.moveConteng ul li:nth-of-type(1){
+    top: 0;
+    left: 0;
+}
+.moveConteng ul li:nth-of-type(2){
+    top: 0;
+    left: 3.2rem;
+}
+.moveConteng ul li:nth-of-type(3){
+    top: 0;
+    left: 6.4rem;
+}
+.moveConteng ul li:nth-of-type(4){
+    top: 3.2rem;
+    left: 0;
+}
+.moveConteng ul li:nth-of-type(5){
+    top: 3.2rem;
+    left:3.2rem;
+}
+.moveConteng ul li:nth-of-type(6){
+    top: 3.2rem;
+    left: 6.4rem;
+}
+.moveConteng ul li:nth-of-type(7){
+    top: 6.4rem;
+    left: 0;
+}
+.moveConteng ul li:nth-of-type(8){
+    top: 6.4rem;
+    left: 3.2rem;
+}
+.moveConteng ul li:nth-of-type(9){
+    top: 6.4rem;
+    left: 6.4rem;
+}

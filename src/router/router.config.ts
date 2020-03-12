@@ -1,4 +1,4 @@
-import { Login, HomePage, Message, Friends} from '@routers/index';
+import { Login, HomePage, Message, Friends, DragPage} from '@routers/index';
 const routerConfig = [
     {
         path: '/',
@@ -18,6 +18,11 @@ const routerConfig = [
     {
         path: '/friendList',
         component: Friends,
+        exact: true
+    },
+    {
+        path: '/dragPage',
+        component: DragPage,
         exact: true
     },
     // {
