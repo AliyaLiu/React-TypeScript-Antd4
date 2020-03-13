@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react';
 import styles from './index.scss';
 // import '@assets/iconfont/iconfont.css';
-import DetailInfo from '@containers/Page/detailInfo';
+import DetailInfo from '@containers/wechat/Page/detailInfo';
 import MessageList from '@mock/message/消息列表.json';
 import { Input } from 'antd';
 const { Search } = Input;

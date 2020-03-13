@@ -1,27 +1,29 @@
 import React, { memo, useMemo, useRef } from 'react';
 import { useDrag, useDrop } from 'react-dnd';
 import ItemTypes from './ItemTypes';
+import '@assets/iconfont/iconfont.css';
+import styles from './index.scss';
 
 const style: React.CSSProperties = {
     border: '1px dashed gray',
-    // padding: '0.5rem 1rem',
-    // marginBottom: '.5rem',
     backgroundColor: 'white',
     cursor: 'move',
     width: '3rem',
     height: '3rem',
     textAlign: 'center',
     float: 'left',
-    margin: '0.1rem',
+    margin: '0.5rem',
+    position: "relative"
 }
 
 export interface CardProps {
     id: any,
     text: string,
-    moveCard: (draggedId: string, id: string) => void
+    moveCard: (draggedId: string, id: string) => void,
+    deleteOne: ( id: any) => void,
 }
 
-const Card: React.FC<CardProps> = memo(({ id, text, moveCard }) => {
+const Card: React.FC<CardProps> = memo(({ id, text, moveCard, deleteOne }) => {
     const ref = useRef(null);
     const [{ isDragging }, connectDrag] = useDrag({
         item: { id, type: ItemTypes.CARD },
@@ -41,6 +43,10 @@ const Card: React.FC<CardProps> = memo(({ id, text, moveCard }) => {
             }
         },
     })
+    //删除某个元素
+    const delectIcon = ()=>{
+        deleteOne(id);
+    }
 
     connectDrag(ref);
     connectDrop(ref);
@@ -49,6 +55,7 @@ const Card: React.FC<CardProps> = memo(({ id, text, moveCard }) => {
     return (
         <div ref={ref} style={containerStyle}>
             {text}
+            <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i>
         </div>
     )
 })

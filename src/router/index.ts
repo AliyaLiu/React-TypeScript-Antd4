@@ -6,25 +6,25 @@ const timeout = 100;
 
 // 登录页
 export const Login = Loadable({
-    loader: () => import("@containers/login"),
+    loader: () => import("@containers/wechat/login"),
     loading: Loading,
     timeout: timeout
 });
 // 首页
 export const HomePage = Loadable({
-    loader: () => import("@containers/Page"),
+    loader: () => import("@containers/wechat/Page"),
     loading: Loading,
     timeout: timeout
 });
 //消息页
 export const Message = Loadable({
-    loader: () => import("@containers/Page/message"),
+    loader: () => import("@containers/wechat/Page/message"),
     loading: Loading,
     timeout: timeout
 });
 //好友页
 export const Friends = Loadable({
-    loader: () => import("@containers/Page/friends"),
+    loader: () => import("@containers/wechat/Page/friends"),
     loading: Loading,
     timeout: timeout
 });
@@ -34,6 +34,11 @@ export const DragPage = Loadable({
     loading: Loading,
     timeout: timeout
 })
+// export const TSDemo = Loadable({
+//     loader: () => import("@containers/other/TSDemo"),
+//     loading: Loading,
+//     timeout: timeout
+// });
 // export const ProductDetail = Loadable({
 //     loader: () => import("@containers/Mall/ProductDetail"),
 //     loading: Loading,
@@ -54,8 +59,4 @@ export const DragPage = Loadable({
 //     loading: Loading,
 //     timeout: timeout
 // });
-// export const TSDemo = Loadable({
-//     loader: () => import("@containers/TSDemo"),
-//     loading: Loading,
-//     timeout: timeout
-// });
+

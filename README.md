@@ -1,4 +1,3 @@
-<!-- 2018/08/31 -->
 # react脚手架
 
 ## 介绍
@@ -19,9 +18,6 @@
 1、https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi (react扩展，开发者模式能够看到react组件结构)
 2、https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd (redux插件)
 
-## 分支差异
-- **master**: 主分支；
-- **ts**: typescript分支；
 
 ### 相关文件目录介绍:
 
@@ -119,17 +115,6 @@ npm start
 - IS_LOCAL=true  代表本地环境(加入了bundle-analyzer)
 - cross-env FILE_TYPE=m   (FILE_TYPE项目类似,不定义则为pc端，非PC端项目会引入postcss-pxtorem插件)
 
-### CI/CD 流程
-CI/CD 流程与施强运维团队最新版 2.0 保持一致：
-
-# CI
-前后分离项目构建后的成品包，在服务器的存储路径： /data/static/webapp/
-CI 脚本部分逻辑：
-1. 【CI】根据是否存在 yarn.lock，区分 yarn 和 npm
-2. 【CI】release 分支：执行 yarn/npm run build
-3. 【CI】其他分支：执行 yarn/npm run build -- --env.ENV=pre
-# CD
-CD 流程与施强运维团队最新版 2.0 保持一致
 
 ## 变更日志
 

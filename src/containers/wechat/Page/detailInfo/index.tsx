@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.scss';
 import '@assets/iconfont/iconfont.css';
+
 // import DetailInfo from '@mock/message/消息内容.json';
 
 const DetaiInfo = (props: any) => {

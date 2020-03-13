@@ -1,0 +1,29 @@
+.iconDele{
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    font-size: 0.5rem;
+    color: crimson;
+    background-color: #fff;
+}
+.addcard{
+    ul{
+        list-style: none;
+        li{
+            list-style: none;
+            width: 2rem;
+            height: 2rem;
+            background-color: cadetblue;
+            float: left;
+            text-align: center;
+            margin: 0.2rem;
+            position: relative;
+            i{
+                position: absolute;
+                top: -0.4rem;
+                right: -0.4rem;
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

@@ -1,8 +1,8 @@
 import React,{ useState } from 'react';
 import styles from './index.scss';
 import '@assets/iconfont/iconfont.css';
-import Message from '@containers/Page/message';
-import FriendList from '@containers/Page/friends';
+import Message from '@containers/wechat/Page/message';
+import FriendList from '@containers/wechat/Page/friends';
 
 export default function HomePage(){
     const [type,setType] = useState("message");

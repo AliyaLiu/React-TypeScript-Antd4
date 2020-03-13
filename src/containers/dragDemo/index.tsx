@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
-import Example from './example';
+import Example from './reactDnd/example';
 import AnotherType  from './original';
 
 export default function DemoDrag() {

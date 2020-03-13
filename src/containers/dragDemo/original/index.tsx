@@ -11,7 +11,7 @@ function OriginalType(){
 
     console.log('listlistlistlist',list);
 
-    function dragEnter( item: number ){
+    function dragEnter( ){
         // onMouseEnter事件在鼠标指针移动到元素上时触发
         // 类似于onmouseover，唯一的区别是onmouseenter不支持冒泡
         // console.log("onMouseEnter","鼠标当前所在元素","鼠标当前所在的元素内容",item);
@@ -50,7 +50,7 @@ function OriginalType(){
         }
     }
 
-    function dragUp( item: number ){
+    function dragUp( ){
         // console.log("onMouseUp","鼠标在元素上按下-在元素上移开","移开时的元素内容",item, "isDrag", isDrag);
         if( isDrag ){
             setIsDrag(false);
@@ -58,7 +58,7 @@ function OriginalType(){
         }
     }
 
-    function dragMove( item: number ){
+   /*  function dragMove( item: number ){
         console.log("onMouseMove","鼠标在元素上移动-未按下鼠标即进行的移动","移动的元素的内容",item);
     }
 
@@ -68,7 +68,7 @@ function OriginalType(){
         setIsDrag(false);
         setMoveDom(0);
     }
-
+ */
     function dragLeave(){
         // onMouseLeave在鼠标移出元素的时候触发，通常与onMouseenter一起使用，在鼠标移动到元素上时触发；
         // onMouseLeave事件类似于onmouseout事件，唯一的区别是onMouseLeave事件不支持冒泡；
@@ -90,10 +90,10 @@ function OriginalType(){
                                 // style = { movePlace[index] } 
                                 // className={ moveDom === item && isDrag ? "dragMove" : "" }
                                 key = {item}
-                                onMouseEnter = { ()=>dragEnter(item) }
+                                onMouseEnter = { ()=>dragEnter() }
                                 onMouseOver = { ( e )=>dragOver(item, e) }
                                 onMouseDown = { ()=>dragDown(item) }
-                                onMouseUp = { ()=>dragUp(item) }
+                                onMouseUp = { ()=>dragUp() }
                                 // onMouseMove={ ()=>dragMove(item) }
                                 // onMouseOut = { ()=>dragOut(item) }
                                 // onMouseLeave = { ()=>dragLeave(item) }

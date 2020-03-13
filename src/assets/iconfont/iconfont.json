@@ -1,10 +1,38 @@
 {
   "id": "1674761",
-  "name": "微信-demo",
+  "name": "demo-all",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
+    {
+      "icon_id": "1130614",
+      "name": "关闭",
+      "font_class": "guanbi2",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "3136988",
+      "name": "关闭",
+      "font_class": "guanbi3",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "5712912",
+      "name": "关闭",
+      "font_class": "guanbi4",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "7549346",
+      "name": "关闭",
+      "font_class": "RectangleCopy",
+      "unicode": "e6a1",
+      "unicode_decimal": 59041
+    },
     {
       "icon_id": "104840",
       "name": "删除",
