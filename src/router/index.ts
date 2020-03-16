@@ -34,6 +34,13 @@ export const DragPage = Loadable({
     loading: Loading,
     timeout: timeout
 })
+
+//进制转换
+export const BaseTransform = Loadable({
+    loader: () => import("@containers/allDemo/baseTransform"),
+    loading: Loading,
+    timeout: timeout
+})
 // export const TSDemo = Loadable({
 //     loader: () => import("@containers/other/TSDemo"),
 //     loading: Loading,

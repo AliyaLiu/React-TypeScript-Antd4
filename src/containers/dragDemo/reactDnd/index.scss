@@ -5,11 +5,34 @@
     font-size: 0.5rem;
     color: crimson;
     background-color: #fff;
+    cursor: pointer;
+}
+.showIcon{
+    // border: 1px dashed gray;
+    // background-color: white;
+    width: 3rem;
+    height: 3rem;
+    // text-align: center;
+    // float: left;
+    // margin: 0.5rem;
+    // position: relative;
+    display: block;
+}
+.dragitem{
+    border: 1px dashed gray;
+    background-color: white;
+    cursor: move;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    float: left;
+    margin: 0.5rem;
+    position: relative;
 }
 .addcard{
     ul{
         list-style: none;
-        li{
+        li, a{
             list-style: none;
             width: 2rem;
             height: 2rem;
@@ -18,6 +41,8 @@
             text-align: center;
             margin: 0.2rem;
             position: relative;
+            display: block;
+            cursor: pointer;
             i{
                 position: absolute;
                 top: -0.4rem;

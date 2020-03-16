@@ -1,33 +1,24 @@
 import React, { memo, useMemo, useRef } from 'react';
-import { useDrag, useDrop } from 'react-dnd';
+import { useDrag, useDrop, DragSourceMonitor } from 'react-dnd';
 import ItemTypes from './ItemTypes';
 import '@assets/iconfont/iconfont.css';
 import styles from './index.scss';
 
-const style: React.CSSProperties = {
-    border: '1px dashed gray',
-    backgroundColor: 'white',
-    cursor: 'move',
-    width: '3rem',
-    height: '3rem',
-    textAlign: 'center',
-    float: 'left',
-    margin: '0.5rem',
-    position: "relative"
-}
-
 export interface CardProps {
     id: any,
     text: string,
+    href: string,
     moveCard: (draggedId: string, id: string) => void,
     deleteOne: ( id: any) => void,
+    startdrag: boolean,
 }
 
-const Card: React.FC<CardProps> = memo(({ id, text, moveCard, deleteOne }) => {
+const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, deleteOne , startdrag}) => {
     const ref = useRef(null);
     const [{ isDragging }, connectDrag] = useDrag({
         item: { id, type: ItemTypes.CARD },
-        collect: (monitor: any) => {
+        canDrag: startdrag,
+        collect: (monitor: DragSourceMonitor) => {
             const result = {
                 isDragging: monitor.isDragging(),
             }
@@ -43,20 +34,43 @@ const Card: React.FC<CardProps> = memo(({ id, text, moveCard, deleteOne }) => {
             }
         },
     })
+
     //删除某个元素
     const delectIcon = ()=>{
         deleteOne(id);
     }
 
+    // 是否可以跳转
+    const clickJump = (event: any) => {
+        if( startdrag ){
+            let e = event || window.event;
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+        }
+    }
+
     connectDrag(ref);
     connectDrop(ref);
-    const opacity = isDragging ? 0 : 1
-    const containerStyle = useMemo(() => ({ ...style, opacity }), [opacity])
+    const opacity = isDragging ? 0 : 1;
+    const cursor = isDragging ? "move" : "default";
+    const containerStyle = useMemo(() => ({ background:'url("https://static.leke.cn/images/home/photo.png") center/100% 100% no-repeat', opacity, cursor }), [opacity, cursor])
     return (
-        <div ref={ref} style={containerStyle}>
+        <a ref={ref} 
+            className={ styles["dragitem"] } 
+            style={ containerStyle }
+            href={ href }
+            onClick = { (e)=>clickJump(e) }
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             {text}
-            <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i>
-        </div>
+            {
+                startdrag ? <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i> : ''
+            }
+        </a>
     )
 })
 
