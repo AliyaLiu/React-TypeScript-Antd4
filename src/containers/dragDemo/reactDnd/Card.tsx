@@ -56,7 +56,7 @@ const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, deleteOne , 
     connectDrop(ref);
     const opacity = isDragging ? 0 : 1;
     const cursor = isDragging ? "move" : "default";
-    const containerStyle = useMemo(() => ({ background:'url("https://static.leke.cn/images/home/photo.png") center/100% 100% no-repeat', opacity, cursor }), [opacity, cursor])
+    const containerStyle = useMemo(() => ({ background:'url("https://static.leke.cn/images/home/photo.png") center/80% 80% no-repeat', opacity, cursor }), [opacity, cursor])
     return (
         <a ref={ref} 
             className={ styles["dragitem"] } 

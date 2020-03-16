@@ -1,25 +1,21 @@
 .iconDele{
     position: absolute;
-    top: -0.25rem;
-    right: -0.25rem;
+    // top: -0.25rem;
+    // right: -0.25rem;
+    top: 0.25rem;
+    right: 0.25rem;
     font-size: 0.5rem;
     color: crimson;
     background-color: #fff;
     cursor: pointer;
 }
-.showIcon{
-    // border: 1px dashed gray;
-    // background-color: white;
-    width: 3rem;
-    height: 3rem;
-    // text-align: center;
-    // float: left;
-    // margin: 0.5rem;
-    // position: relative;
-    display: block;
+.wrapitem{
+    position: relative;
+    width: 3.25rem;
+    height: 3.25rem;
 }
 .dragitem{
-    border: 1px dashed gray;
+    // border: 1px dashed gray;
     background-color: white;
     cursor: move;
     width: 3rem;
@@ -28,6 +24,7 @@
     float: left;
     margin: 0.5rem;
     position: relative;
+    display: block;
 }
 .addcard{
     ul{
@@ -43,6 +40,7 @@
             position: relative;
             display: block;
             cursor: pointer;
+            z-index: 12;
             i{
                 position: absolute;
                 top: -0.4rem;
