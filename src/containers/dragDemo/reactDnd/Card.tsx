@@ -11,13 +11,14 @@ export interface CardProps {
     moveCard: (draggedId: string, id: string) => void,
     deleteOne: ( id: any) => void,
     startdrag: boolean,
+    canMove: boolean,
 }
 
-const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, deleteOne , startdrag}) => {
+const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove,deleteOne , startdrag}) => {
     const ref = useRef(null);
     const [{ isDragging }, connectDrag] = useDrag({
         item: { id, type: ItemTypes.CARD },
-        canDrag: startdrag,
+        canDrag: startdrag && canMove ? true : false,
         collect: (monitor: DragSourceMonitor) => {
             const result = {
                 isDragging: monitor.isDragging(),
@@ -29,8 +30,8 @@ const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, deleteOne , 
     const [, connectDrop] = useDrop({
         accept: ItemTypes.CARD,
         hover({ id: draggedId }: { id: string; type: string }) {
-            if (draggedId !== id) {
-                moveCard(draggedId, id);
+            if (draggedId !== id && canMove ) {
+                moveCard(draggedId, id );
             }
         },
     })
@@ -68,7 +69,7 @@ const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, deleteOne , 
             >
             {text}
             {
-                startdrag ? <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i> : ''
+                startdrag && canMove ? <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i> : ''
             }
         </a>
     )

@@ -16,37 +16,45 @@ export interface ContainerState {
     addCardList: any[],
     startdrag: boolean,
 }
-
-function buildCardData() {
-    const cardsById: { [key: string]: any } = {}
-    const cardsByIndex = [];
-    const addCardList = [];
-
-    for (let i = 0; i < 9; i += 1) {
-        const card = { id: i+1, text: i+1, href: "http://www.baidu.com" }
-        cardsById[card.id] = card;
-        cardsByIndex[i] = card;
-    }
-
-    for( let i=0;i<8;i++ ){
-        const addcard = { id: i+20, text: i +20, href: "http://www.baidu.com" };
-        addCardList[i] = addcard;
-    }
-
-    return {
-        cardsById,
-        cardsByIndex,
-        addCardList,
-        startdrag: false,
-    };
-}
 let pendingUpdateFn: any;
 let requestedFrame: number | undefined;
 export default class Container extends React.Component<{}, ContainerState> {
 
     constructor(props: {}) {
         super(props);
-        this.state = buildCardData()
+        // this.state = buildCardData()
+        this.state = {
+            cardsById: [],
+            cardsByIndex : [],
+            addCardList: [],
+            startdrag: false,
+        }
+    }
+
+    componentDidMount(){
+        const cardsById: { [key: string]: any } = {}
+        const cardsByIndex = [];
+        const addCardList = [];
+    
+        for (let i = 0; i < 9; i += 1) {
+            let card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true }
+            if(  i < 2){
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: false }
+            }
+            cardsById[card.id] = card;
+            cardsByIndex[i] = card;
+        }
+    
+        for( let i=0;i<8;i++ ){
+            const addcard = { id: i+20, text: i +20, href: "http://www.baidu.com" };
+            addCardList[i] = addcard;
+        }
+        this.setState({
+            cardsById,
+            cardsByIndex,
+            addCardList,
+            startdrag: false,
+        })
     }
 
     componentWillUnmount() {
@@ -63,18 +71,6 @@ export default class Container extends React.Component<{}, ContainerState> {
         })
     }
 
-    // clickJump = (event: any) => {
-    //     if( this.state.startdrag  ){
-    //         let e = event || window.event;
-    //         if (e.preventDefault) {
-    //             e.preventDefault();
-    //         } else {
-    //             e.returnValue = false;
-    //         }
-    //     }
-    // }
-
-
     render() {
         const { cardsByIndex, addCardList, startdrag } = this.state;
 
@@ -88,6 +84,7 @@ export default class Container extends React.Component<{}, ContainerState> {
                         id={ card.id}
                         href = { card.href }
                         text = { card.text }
+                        canMove = { card.canMove }
                         moveCard={this.moveCard}
                         deleteOne = { this.deleteOne}
                         startdrag = { startdrag }   
@@ -187,7 +184,6 @@ export default class Container extends React.Component<{}, ContainerState> {
 
     moveCard = (id: string, afterId: string) => {
         const { cardsById, cardsByIndex } = this.state;
-
         const card = cardsById[id];
         const afterCard = cardsById[afterId]
 
