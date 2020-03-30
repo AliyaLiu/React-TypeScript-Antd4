@@ -6,8 +6,8 @@ import styles from './index.scss';
 import { message, Button } from 'antd';
 
 const style = {
-    width: 400,
-    height: 360,
+    width: 600,
+    height: 60,
 }
 
 export interface ContainerState {
@@ -36,7 +36,7 @@ export default class Container extends React.Component<{}, ContainerState> {
         const cardsByIndex = [];
         const addCardList = [];
     
-        for (let i = 0; i < 9; i += 1) {
+        for (let i = 0; i < 20; i += 1) {
             let card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true }
             if(  i < 2){
                 card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: false }
@@ -45,13 +45,13 @@ export default class Container extends React.Component<{}, ContainerState> {
             cardsByIndex[i] = card;
         }
     
-        for( let i=0;i<8;i++ ){
+        for( let i=0;i<9;i++ ){
             const addcard = { id: i+20, text: i +20, href: "http://www.baidu.com" };
             addCardList[i] = addcard;
         }
         this.setState({
-            cardsById,
-            cardsByIndex,
+            cardsById,  //原始排序的拖拽元素
+            cardsByIndex,  //更改位置后的元素数组
             addCardList,
             startdrag: false,
         })
@@ -78,7 +78,7 @@ export default class Container extends React.Component<{}, ContainerState> {
         <>
             <div style={style}>
             {  
-                cardsByIndex.map(card => (
+                cardsByIndex.slice(0,9).map(card => (
                     <Card
                         key={ card.id } 
                         id={ card.id}
@@ -86,17 +86,33 @@ export default class Container extends React.Component<{}, ContainerState> {
                         text = { card.text }
                         canMove = { card.canMove }
                         moveCard={this.moveCard}
-                        deleteOne = { this.deleteOne}
-                        startdrag = { startdrag }   
+                        // deleteOne = { this.deleteOne}
+                        startdrag = { startdrag }
+                        operateType ={ "up" }
+
                     />
                 ))
             }
             </div>
-
             <Button onClick={()=>this.canDelete() }> { startdrag ? "可以管理" : "仅是查看"} </Button>
             <div className={ styles["addcard"] }>
                 <ul>
                     {
+                        cardsByIndex.slice(10,9999).map(card => (
+                            <Card
+                                key={ card.id } 
+                                id={ card.id}
+                                href = { card.href }
+                                text = { card.text }
+                                canMove = { card.canMove }
+                                moveCard={this.moveCard}
+                                // deleteOne = { this.deleteOne}
+                                startdrag = { startdrag }  
+                                operateType ={ "down" }
+                            />
+                        ))
+                    }
+                    {/* {
                         addCardList.map( addcard => (
                             <a
                                 key = { addcard.id }
@@ -112,7 +128,7 @@ export default class Container extends React.Component<{}, ContainerState> {
                                 }
                             </a>
                         ))
-                    }
+                    } */}
                 </ul>
             </div>
         </>
@@ -177,26 +193,34 @@ export default class Container extends React.Component<{}, ContainerState> {
     drawFrame = () => {
         const nextState = update(this.state, pendingUpdateFn);
         this.setState(nextState);
+        console.log(nextState);
 
         pendingUpdateFn = undefined;
         requestedFrame = undefined;
     }
 
+    //id: 被拖动的元素 afterId: 目标元素
     moveCard = (id: string, afterId: string) => {
-        const { cardsById, cardsByIndex } = this.state;
-        const card = cardsById[id];
-        const afterCard = cardsById[afterId]
+        let { cardsById, cardsByIndex } = this.state;
+        let newcardsByIndex = cardsByIndex.slice();
+        let card = cardsById[id];
+        let afterCard = cardsById[afterId];
 
         const cardIndex = cardsByIndex.indexOf(card)
-        const afterIndex = cardsByIndex.indexOf(afterCard)
+        const afterIndex = cardsByIndex.indexOf(afterCard);
 
-        this.scheduleUpdate({
-            cardsByIndex: {
-                $splice: [
-                [cardIndex, 1],
-                [afterIndex, 0, card],
-                ],
-            },
+        newcardsByIndex[cardIndex] = newcardsByIndex.splice(afterIndex, 1,card)[0];
+        this.setState({
+            cardsByIndex: newcardsByIndex,
         })
+
+        // this.scheduleUpdate({
+        //     cardsByIndex: {
+        //         $splice: [
+        //         [cardIndex, 1],
+        //         [afterIndex, 0, card],
+        //         ],
+        //     },
+        // })
     }
 }

@@ -1,5 +1,5 @@
 import React, { memo, useMemo, useRef } from 'react';
-import { useDrag, useDrop, DragSourceMonitor } from 'react-dnd';
+import { useDrag, useDrop, DragSourceMonitor , DragSource, DragPreviewImage} from 'react-dnd';
 import ItemTypes from './ItemTypes';
 import '@assets/iconfont/iconfont.css';
 import styles from './index.scss';
@@ -9,13 +9,16 @@ export interface CardProps {
     text: string,
     href: string,
     moveCard: (draggedId: string, id: string) => void,
-    deleteOne: ( id: any) => void,
+    // deleteOne: ( id: any) => void,
     startdrag: boolean,
     canMove: boolean,
+    operateType: string, //操作类型显示不同的样式
 }
 
-const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove,deleteOne , startdrag}) => {
+const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove , startdrag, operateType}) => {
+    // const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove,deleteOne , startdrag}) => {
     const ref = useRef(null);
+
     const [{ isDragging }, connectDrag] = useDrag({
         item: { id, type: ItemTypes.CARD },
         canDrag: startdrag && canMove ? true : false,
@@ -29,7 +32,7 @@ const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove,dele
 
     const [, connectDrop] = useDrop({
         accept: ItemTypes.CARD,
-        hover({ id: draggedId }: { id: string; type: string }) {
+        drop({ id: draggedId }: { id: string; type: string }) {
             if (draggedId !== id && canMove ) {
                 moveCard(draggedId, id );
             }
@@ -37,41 +40,50 @@ const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove,dele
     })
 
     //删除某个元素
-    const delectIcon = ()=>{
-        deleteOne(id);
-    }
+    // const delectIcon = ()=>{
+    //     deleteOne(id);
+    // }
 
     // 是否可以跳转
     const clickJump = (event: any) => {
         if( startdrag ){
             let e = event || window.event;
+            event.cancelBubble = true;
             if (e.preventDefault) {
                 e.preventDefault();
             } else {
                 e.returnValue = false;
             }
+        }else{
+            window.open(href);
         }
     }
 
     connectDrag(ref);
     connectDrop(ref);
     const opacity = isDragging ? 0 : 1;
-    const cursor = isDragging ? "move" : "default";
-    const containerStyle = useMemo(() => ({ background:'url("https://static.leke.cn/images/home/photo.png") center/80% 80% no-repeat', opacity, cursor }), [opacity, cursor])
+    const zIndex = startdrag ? -1 : 0;
+    const cursor = isDragging ? "default" : "default";
+    const containerStyle = useMemo(() => ({ opacity, cursor }), [opacity, cursor])
+    const itemStyle = useMemo(() => ({ background:'url("https://static.leke.cn/images/home/photo.png") center/80% 80% no-repeat', zIndex}), [zIndex])
     return (
-        <a ref={ref} 
-            className={ styles["dragitem"] } 
-            style={ containerStyle }
-            href={ href }
-            onClick = { (e)=>clickJump(e) }
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            {text}
-            {
-                startdrag && canMove ? <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i> : ''
-            }
-        </a>
+        <div  
+            ref={ref}  
+            className={` ${ operateType === "up" ? styles["wrapitem"] : styles["wrapitemDown"] }  `  } 
+            style={ containerStyle } >
+            <div
+                style={ itemStyle }
+                className={ styles["dragitem"] }
+                onClick = { (e)=>clickJump(e) }
+                >
+                {
+                    // startdrag && canMove ? <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i> : ''
+                }
+            </div>
+            {/* <div className={ styles["cardName"] }>{ text }{text}{text}</div> */}
+            { text }{text}{text}
+        </div>
+        
     )
 })
 
