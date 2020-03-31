@@ -13,7 +13,8 @@
 
 ### reactDnd 插件实现
 
-    reactDnd：使用react-dnd实现，官网的例子搬运过来，为了兼容IE9，去掉了原本例子中使用的requestAnimationFrame()和cancelAnimationFrame()方式；
+    reactDnd：使用react-dnd实现，官网的例子搬运过来，为了兼容IE9，
+    去掉了原本例子中使用的requestAnimationFrame()和cancelAnimationFrame()方式；
     2020/03/31更新
     在IE下，在最外层的拖动元素，内有子元素，如果点击到子元素的位置进行拖动，跟随鼠标的preview drag只有子元素本身，
     为了解决这个问题，把内部的所有子元素的z-index设为负数，使父级覆盖在子元素之上，此时不论内部有添加了背景图的div
