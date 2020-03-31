@@ -27,7 +27,7 @@ export default class Container extends React.Component<{}, ContainerState> {
             cardsById: [],
             cardsByIndex : [],
             addCardList: [],
-            startdrag: false,
+            startdrag: true,
         }
     }
 
@@ -90,7 +90,7 @@ export default class Container extends React.Component<{}, ContainerState> {
     }
 
     render() {
-        const { cardsByIndex, addCardList, startdrag } = this.state;
+        const { cardsByIndex, startdrag } = this.state;
 
         return (
         <>
@@ -105,7 +105,6 @@ export default class Container extends React.Component<{}, ContainerState> {
                         icon = { card.icon }
                         canMove = { card.canMove }
                         moveCard={this.moveCard}
-                        // deleteOne = { this.deleteOne}
                         startdrag = { startdrag }
                         operateType ={ "up" }
 
@@ -126,29 +125,11 @@ export default class Container extends React.Component<{}, ContainerState> {
                                 icon = { card.icon }
                                 canMove = { card.canMove }
                                 moveCard={this.moveCard}
-                                // deleteOne = { this.deleteOne}
                                 startdrag = { startdrag }  
                                 operateType ={ "down" }
                             />
                         ))
                     }
-                    {/* {
-                        addCardList.map( addcard => (
-                            <a
-                                key = { addcard.id }
-                                onClick = { (e)=>this.addCardOne(addcard,e) }
-                                href={ addcard.href }
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                style={{ background:'url("https://static.leke.cn/images/home/photo.png") center/100% 100% no-repeat'} }
-                            >
-                                { addcard.text }
-                                {
-                                    startdrag ? <i className="iconfont icon-tianjia3"></i> : ''
-                                }
-                            </a>
-                        ))
-                    } */}
                 </ul>
             </div>
         </>
@@ -234,6 +215,7 @@ export default class Container extends React.Component<{}, ContainerState> {
             cardsByIndex: newcardsByIndex,
         })
 
+        //类似手机的拖拽排序
         // this.scheduleUpdate({
         //     cardsByIndex: {
         //         $splice: [
