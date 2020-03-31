@@ -8,6 +8,7 @@ export interface CardProps {
     id: any,
     text: string,
     href: string,
+    icon: string,
     moveCard: (draggedId: string, id: string) => void,
     // deleteOne: ( id: any) => void,
     startdrag: boolean,
@@ -15,7 +16,7 @@ export interface CardProps {
     operateType: string, //操作类型显示不同的样式
 }
 
-const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove , startdrag, operateType}) => {
+const Card: React.FC<CardProps> = memo(({ id, text, href,icon, moveCard, canMove , startdrag, operateType}) => {
     // const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove,deleteOne , startdrag}) => {
     const ref = useRef(null);
 
@@ -46,42 +47,56 @@ const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove , st
 
     // 是否可以跳转
     const clickJump = (event: any) => {
-        if( startdrag ){
-            let e = event || window.event;
-            event.cancelBubble = true;
-            if (e.preventDefault) {
-                e.preventDefault();
-            } else {
-                e.returnValue = false;
-            }
-        }else{
-            window.open(href);
-        }
+        console.log('我在点击图片');
+
+        window.open(href);
+        // if( startdrag ){
+        //     let e = event || window.event;
+        //     event.cancelBubble = true;
+        //     if (e.preventDefault) {
+        //         e.preventDefault();
+        //     } else {
+        //         e.returnValue = false;
+        //     }
+        // }else{
+        //     window.open(href);
+        // }
+    }
+
+    const clickText = () => {
+        console.log('我在点击文字');
+    }
+
+    const clickWrap = () => {
+        console.log('我在点击包裹层');
     }
 
     connectDrag(ref);
     connectDrop(ref);
     const opacity = isDragging ? 0 : 1;
     const zIndex = startdrag ? -1 : 0;
-    const cursor = isDragging ? "default" : "default";
+    const cursor = isDragging ? "move" : "default";
     const containerStyle = useMemo(() => ({ opacity, cursor }), [opacity, cursor])
-    const itemStyle = useMemo(() => ({ background:'url("https://static.leke.cn/images/home/photo.png") center/80% 80% no-repeat', zIndex}), [zIndex])
+    const itemStyle = useMemo(() => ({ background:`url(${icon}) center/80% 80% no-repeat`, zIndex}), [zIndex])
     return (
         <div  
             ref={ref}  
             className={` ${ operateType === "up" ? styles["wrapitem"] : styles["wrapitemDown"] }  `  } 
-            style={ containerStyle } >
+            style={ containerStyle }
+            onClick = { ()=>clickWrap() }
+            >
             <div
                 style={ itemStyle }
                 className={ styles["dragitem"] }
                 onClick = { (e)=>clickJump(e) }
                 >
-                {
-                    // startdrag && canMove ? <i className={`iconfont  icon-guanbi2 ${styles["iconDele"]}`} onClick={ delectIcon }></i> : ''
-                }
             </div>
-            {/* <div className={ styles["cardName"] }>{ text }{text}{text}</div> */}
-            { text }{text}{text}
+            <div 
+                className={ styles["cardName"] }
+                onClick={ ()=>clickText() }
+                >
+                {text}{text}{text}{text}{text}{text}
+            </div>
         </div>
         
     )

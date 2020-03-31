@@ -37,9 +37,27 @@ export default class Container extends React.Component<{}, ContainerState> {
         const addCardList = [];
     
         for (let i = 0; i < 20; i += 1) {
-            let card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true }
+            let card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true , icon: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3240639892,262246657&fm=26&gp=0.jpg' }
             if(  i < 2){
-                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: false }
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: false, icon: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1423082072,3733016654&fm=11&gp=0.jpg' }
+            }
+            if(  i > 2 && i< 4){
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true, icon: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1982904135,4226855567&fm=26&gp=0.jpg' }
+            }
+            if(  i > 3 && i< 5){
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true, icon: 'https://dss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2050241383,3805111209&fm=26&gp=0.jpg' }
+            }
+            if(  i > 4 && i< 6){
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true, icon: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2050640350,694074992&fm=26&gp=0.jpg' }
+            }
+            if(  i > 5 && i< 7){
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true, icon: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=270107141,1887139729&fm=26&gp=0.jpg' }
+            }
+            if(  i > 6 && i< 8){
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true, icon: 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4091995795,683975988&fm=26&gp=0.jpg' }
+            }
+            if(  i > 7 && i< 9){
+                card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true, icon: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3857333249,179744864&fm=26&gp=0.jpg' }
             }
             cardsById[card.id] = card;
             cardsByIndex[i] = card;
@@ -84,6 +102,7 @@ export default class Container extends React.Component<{}, ContainerState> {
                         id={ card.id}
                         href = { card.href }
                         text = { card.text }
+                        icon = { card.icon }
                         canMove = { card.canMove }
                         moveCard={this.moveCard}
                         // deleteOne = { this.deleteOne}
@@ -104,6 +123,7 @@ export default class Container extends React.Component<{}, ContainerState> {
                                 id={ card.id}
                                 href = { card.href }
                                 text = { card.text }
+                                icon = { card.icon }
                                 canMove = { card.canMove }
                                 moveCard={this.moveCard}
                                 // deleteOne = { this.deleteOne}
