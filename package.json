@@ -10,7 +10,7 @@
     "dev": "webpack-dev-server --config ./build/webpack.config.development.js",
     "start": "serve dist"
   },
-  "author": "wangzhehong@cnstrong.cn",
+  "author": "",
   "repository": {
     "type": "git",
     "url": ""
