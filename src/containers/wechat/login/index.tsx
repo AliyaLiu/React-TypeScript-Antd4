@@ -9,8 +9,8 @@ export default function HelloHooks(){
     let history = useHistory();
 
     function onFinish(){
-        // history.push('/homePage');
-        history.push('/dragPage');
+        history.push('/homePage');
+        // history.push('/dragPage');
     };
   
     return (

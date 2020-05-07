@@ -1,5 +1,5 @@
 import React, { memo, useMemo, useRef } from 'react';
-import { useDrag, useDrop, DragSourceMonitor , DragSource, DragPreviewImage} from 'react-dnd';
+import { useDrag, useDrop, DragSourceMonitor} from 'react-dnd';
 import ItemTypes from './ItemTypes';
 import '@assets/iconfont/iconfont.css';
 import styles from './index.scss';
@@ -56,6 +56,7 @@ const Card: React.FC<CardProps> = memo(({ id, text, href,icon, moveCard, canMove
     // 是否可以跳转
     const clickJump = (event: any) => {
         console.log('我在点击图片');
+        window.open(href);
         if( startdrag ){
             let e = event || window.event;
             event.cancelBubble = true;
