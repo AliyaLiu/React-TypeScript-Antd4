@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.scss';
 import '@assets/iconfont/iconfont.css';
+import EditTool from './editTool';
 
 // import DetailInfo from '@mock/message/消息内容.json';
 
@@ -21,6 +22,7 @@ const DetaiInfo = (props: any) => {
             <div className={ styles["chatList"] }>
                 111
             </div>
+            <EditTool />
         </div>
     );
 }

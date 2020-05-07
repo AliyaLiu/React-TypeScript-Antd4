@@ -1,0 +1,51 @@
+.container{
+    height: 3.6rem;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid rosybrown;
+    .top{
+        height: 0.6rem;
+        position: relative;
+        i{
+            position: absolute;
+            font-size: 26px;
+            &:nth-of-type(1){
+                left: 0.1rem;
+            }
+            &:nth-of-type(2){
+                left: 0.6rem;
+            }
+            &:nth-of-type(3){
+                left: 1.1rem;
+            }
+        }
+        
+    }
+    .emojiWrap{
+        position: fixed;
+        top: 1.6rem;
+        left: 2rem;
+    }
+    .bottomInput{
+        // height: 3.4rem;
+        // padding-top: 0.6rem;
+        textarea{
+            border: none;
+            background-color: rgba($color: #000000, $alpha: 0);
+        }
+    }
+}
+
+:global{
+    .bottomInput{
+        .ant-input{
+            &:focus{
+                box-shadow: none;
+            }
+        }
+        .ant-input-focused{
+            box-shadow:none;
+        }
+    }
+}

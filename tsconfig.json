@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"outDir": "./dist/",
 		"sourceMap": true,
-		"noImplicitAny": true,
+		"noImplicitAny": false,
 		"module": "esnext",
 		"moduleResolution": "node",
 		"target": "es5",
@@ -28,6 +28,9 @@
 			"@mock/*": ["./src/mock/*"],
 		}
 	},
-	"include": ["./src/**/*"],
+	"include": [
+		"./src/**/*",
+		"typings"
+	],
     "exclude": ["./src/components/Iconfont/source/*"]
 }

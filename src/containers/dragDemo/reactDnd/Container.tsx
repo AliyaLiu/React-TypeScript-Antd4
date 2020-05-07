@@ -33,8 +33,8 @@ export default class Container extends React.Component<{}, ContainerState> {
 
     componentDidMount(){
         const cardsById: { [key: string]: any } = {}
-        const cardsByIndex = [];
-        const addCardList = [];
+        const cardsByIndex: Array<object> = [];
+        const addCardList : Array<object> = [];
     
         for (let i = 0; i < 20; i += 1) {
             let card = { id: i+1, text: i+1, href: "http://www.baidu.com", canMove: true , icon: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3240639892,262246657&fm=26&gp=0.jpg' }
@@ -90,7 +90,7 @@ export default class Container extends React.Component<{}, ContainerState> {
     }
 
     render() {
-        const { cardsByIndex, addCardList, startdrag } = this.state;
+        const { cardsByIndex, startdrag } = this.state;
 
         return (
         <>
@@ -132,23 +132,6 @@ export default class Container extends React.Component<{}, ContainerState> {
                             />
                         ))
                     }
-                    {/* {
-                        addCardList.map( addcard => (
-                            <a
-                                key = { addcard.id }
-                                onClick = { (e)=>this.addCardOne(addcard,e) }
-                                href={ addcard.href }
-                                rel="noopener noreferrer"
-                                target="_blank"
-                                style={{ background:'url("https://static.leke.cn/images/home/photo.png") center/100% 100% no-repeat'} }
-                            >
-                                { addcard.text }
-                                {
-                                    startdrag ? <i className="iconfont icon-tianjia3"></i> : ''
-                                }
-                            </a>
-                        ))
-                    } */}
                 </ul>
             </div>
         </>
