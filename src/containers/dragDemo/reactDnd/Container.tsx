@@ -27,7 +27,7 @@ export default class Container extends React.Component<{}, ContainerState> {
             cardsById: [],
             cardsByIndex : [],
             addCardList: [],
-            startdrag: false,
+            startdrag: true,
         }
     }
 
@@ -105,7 +105,6 @@ export default class Container extends React.Component<{}, ContainerState> {
                         icon = { card.icon }
                         canMove = { card.canMove }
                         moveCard={this.moveCard}
-                        // deleteOne = { this.deleteOne}
                         startdrag = { startdrag }
                         operateType ={ "up" }
 
@@ -126,7 +125,6 @@ export default class Container extends React.Component<{}, ContainerState> {
                                 icon = { card.icon }
                                 canMove = { card.canMove }
                                 moveCard={this.moveCard}
-                                // deleteOne = { this.deleteOne}
                                 startdrag = { startdrag }  
                                 operateType ={ "down" }
                             />
@@ -217,6 +215,7 @@ export default class Container extends React.Component<{}, ContainerState> {
             cardsByIndex: newcardsByIndex,
         })
 
+        //类似手机的拖拽排序
         // this.scheduleUpdate({
         //     cardsByIndex: {
         //         $splice: [

@@ -17,7 +17,6 @@ export interface CardProps {
 }
 
 const Card: React.FC<CardProps> = memo(({ id, text, href,icon, moveCard, canMove , startdrag, operateType}) => {
-    // const Card: React.FC<CardProps> = memo(({ id, text, href, moveCard, canMove,deleteOne , startdrag}) => {
     const ref = useRef(null);
 
     const [{ isDragging }, connectDrag] = useDrag({
@@ -31,18 +30,27 @@ const Card: React.FC<CardProps> = memo(({ id, text, href,icon, moveCard, canMove
         },
     })
 
-    const [, connectDrop] = useDrop({
+    const [ {isOver, canDrop} , connectDrop] = useDrop({
         accept: ItemTypes.CARD,
         drop({ id: draggedId }: { id: string; type: string }) {
             if (draggedId !== id && canMove ) {
                 moveCard(draggedId, id );
             }
         },
+        collect: (monitor) => ({
+            isOver: monitor.isOver(),
+            canDrop: monitor.canDrop(),
+        }),
     })
 
-    //删除某个元素
-    // const delectIcon = ()=>{
-    //     deleteOne(id);
+    const isActive = canDrop && isOver;
+    let border = '1px solid #fff';
+    if (isActive && !isDragging ) {
+        border = '1px dashed red';
+    } 
+    // else 
+    // if (canDrop) {
+    //     border = '1px dashed #000'
     // }
 
     // 是否可以跳转
@@ -72,16 +80,18 @@ const Card: React.FC<CardProps> = memo(({ id, text, href,icon, moveCard, canMove
 
     connectDrag(ref);
     connectDrop(ref);
-    const opacity = isDragging ? 0 : 1;
+    const opacity = isDragging ? 0.4 : 1;
+    const backgroundColor = isDragging ? "yellowgreen" : '';
     const zIndex = startdrag ? -1 : 0;
     const cursor = isDragging ? "move" : "default";
-    const containerStyle = useMemo(() => ({ opacity, cursor }), [opacity, cursor])
+    const containerStyle = useMemo(() => ({ opacity, cursor, }), [opacity, cursor])
     const itemStyle = useMemo(() => ({ background:`url(${icon}) center/80% 80% no-repeat`, zIndex}), [zIndex])
+    const bgStyle = useMemo(() => ({ backgroundColor }), [backgroundColor])
     return (
         <div  
             ref={ref}  
             className={` ${ operateType === "up" ? styles["wrapitem"] : styles["wrapitemDown"] }  `  } 
-            style={ containerStyle }
+            style={{  ...containerStyle, border, backgroundColor  }}
             onClick = { ()=>clickWrap() }
             >
             <div
@@ -96,6 +106,7 @@ const Card: React.FC<CardProps> = memo(({ id, text, href,icon, moveCard, canMove
                 >
                 {text}{text}{text}{text}{text}{text}
             </div>
+            <div className={ styles['bg'] } style={ bgStyle } ></div>
         </div>
         
     )
