@@ -26,7 +26,7 @@
             }
             return arr1;
         }
-        console.log(11111,arrayRepeat([1,'a','A',null,null,true,true,false,false,2,3,2,,,'2','1','1',[],[],{},{}]));
+        console.log(11111,arrayRepeat([1,'a','A',null,null,true,true,false,false,NaN,NaN,2,3,2,,,'2','1','1',[],[],{},{}]));
 
         // 2.利用indexOf去重
         function arrayRepeat1(arr){
@@ -43,7 +43,7 @@
             })
             return arr1;
         }
-        console.log(22222,arrayRepeat1([1,'a','A',null,null,true,true,false,false,2,3,2,,,'2','1','1',[],[],{},{}]));
+        console.log(22222,arrayRepeat1([1,'a','A',null,null,true,true,false,false,NaN,NaN,2,3,2,,,'2','1','1',[],[],{},{}]));
 
         // 3.排序后去重  排序后只比较当前元素与后一个是否相同，如果后一个元素和上一个元素相同，就说明重复
         function arrayRepeat2(arr){
@@ -58,7 +58,7 @@
             }
             return arr1;
         }
-        console.log(3333333,arrayRepeat2([1,'a','A',null,null,true,true,false,false,2,3,2,,,'2','1','1',[],[],{},{}]));
+        console.log(3333333,arrayRepeat2([1,'a','A',null,null,true,true,false,false,NaN,NaN,2,3,2,,,'2','1','1',[],[],{},{}]));
 
         // 4.排序&不排序的两种去重方式，通过传参是否已排序来决定按照哪种方式进行去重--使用for循环
         function arrayRepeat3(arr,issort) {
@@ -85,34 +85,68 @@
                 //         arr1.push(item);
                 //     }
                 // })
+
                 /* forEach方法实现遍历---会过滤掉undefined---可以再foreach中使用async await  */
                 // arr.forEach(function(item){
                 //     if( arr1.indexOf(item) === -1 ){
                 //         arr1.push(item);
                 //     }
                 // })
+
                 /* for in 遍历出来的是key---会过滤掉undefined */
                 // for( let item in arr ){
                 //     if( arr1.indexOf(arr[item]) === -1 ){
                 //         arr1.push(arr[item]);
                 //     }
                 // }
+
                 /* for of 遍历出来的是value---表现和for一样，不会过滤掉undefined */
-                for( let item of arr ){
-                    if( arr1.indexOf(item) === -1 ){
-                        arr1.push(item);
-                    }
-                }
-                /* for循环 */
-                // for( let i=0;i<arr.length;i++ ){
-                //     if( arr1.indexOf(arr[i]) === -1 ){
-                //         arr1.push(arr[i]);
+                // for( let item of arr ){
+                //     if( arr1.indexOf(item) === -1 ){
+                //         arr1.push(item);
                 //     }
                 // }
+
+                /* filter语法：array.folter(function(currentValue,index,arr), thisValue)---会过滤掉undefined */
+                // arr.filter(function(currentValue){
+                //     if( arr1.indexOf(currentValue) === -1 ){
+                //         arr1.push(currentValue)
+                //     }
+                // })
+
+                /* for循环 */
+                for( let i=0;i<arr.length;i++ ){
+                    if( arr1.indexOf(arr[i]) === -1 ){
+                        arr1.push(arr[i]);
+                    }
+                }
             }
             return arr1;
         }
-        console.log(4444444,arrayRepeat3([1,'a','A',null,null,true,true,false,false,2,3,2,,,'2','1','1',[],[],{},{}],false));
+        console.log(4444444,arrayRepeat3([1,'a','A',null,null,true,true,false,false,NaN,NaN,2,3,2,,,'2','1','1',[],[],{},{}],false));
+
+        // 5.同一个字母的大小写视为一致
+        function arrayRepeat4(arr,isSort,itertee){
+
+        }
+
+        // 6.ES6方法去重 
+        function arrayRepeat5(arr) {
+            /* 使用set方法，表现形式和for循环一致，不会过滤掉undefined */
+            // return Array.from(new Set(arr));
+
+            return [...new Set(arr)]
+        }
+        console.log(666666,arrayRepeat5([1,'a','A',null,null,true,true,false,false,NaN,NaN,2,3,2,,,'2','1','1',[],[],{},{}],false));
+
+        // 7.数组排序sort();
+        let sortArray = [1,2,3,4,5,1,2,897,2,4,789,236,124,678,true,false,NaN,null,undefined,[],{}];
+        function sortArr(a,b) {
+            return a - b;
+        }
+        console.log('sort排序',sortArray.sort([...sortArr]));
+        console.log('sort排序原始数组',sortArray);
+        
     </script>
 </body>
 </html>

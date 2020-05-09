@@ -14,11 +14,17 @@
                 left: 0.1rem;
             }
             &:nth-of-type(2){
-                left: 0.6rem;
+                // left: 0.6rem;
+                left: 1.1rem;
             }
             &:nth-of-type(3){
                 left: 1.1rem;
             }
+        }
+        label{
+            position: absolute;
+            font-size: 26px;
+            left: 0.6rem;
         }
         
     }

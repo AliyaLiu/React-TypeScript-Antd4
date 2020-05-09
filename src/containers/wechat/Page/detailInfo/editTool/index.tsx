@@ -17,22 +17,22 @@ const EditTool = () => {
     }
 
     const checkEmoji = (emoji) => {
-        // console.log(emoji,event);
-        setChatInput(chatInput+emoji.native)
+        console.log('emoji',emoji);
+        // setChatInput(chatInput+emoji.native)
 
     }
 
     const entryValue = (e) => {
-        window.console.log(e)
+        window.console.log('onchange事件',e.target.value)
     }
     return (
         <div className={ styles["container"] }>
             <div className={ styles["top"] }>
                 <i className="iconfont icon-smile" onClick={ showEmojiClick }></i>
-                <i className="iconfont icon-wenjian2"></i>
-                {/* <input type="file" name="filename" id="filename" hidden/> */}
-                {/* <label htmlFor="filename" className="iconfont icon-wenjian2"></label> */}
-                <i className="iconfont icon-jietu"></i>
+                {/* <i className="iconfont icon-wenjian2"></i> */}
+                <input type="file" name="filename" id="filename" hidden/>
+                <label htmlFor="filename" className="iconfont icon-wenjian2"></label>
+                <i className="iconfont icon-jietu_huaban"></i>
             </div>
             {
                 showEmoji ?
@@ -46,7 +46,7 @@ const EditTool = () => {
             <div className={`${styles["bottomInput"]} bottomInput`  }>
                 <TextArea 
                     rows={8}
-                    value={ chatInput }
+                    // value={ chatInput }
                     onChange={ entryValue }
                     />
             </div>
