@@ -1,5 +1,7 @@
 # react脚手架
 
+test
+
 ## 介绍
 > 基于 react 和 webpack 的 SPA 脚手架。
 > 项目入口文件: src/mount.js
