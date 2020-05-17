@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        img{ width: 200px;height: 28px; }
+        .logotwo{ display: none; }
+        @media (-webkit-device-pixel-ratio: 2){
+            .logoone{
+                display: none;
+            }
+            .logotwo{
+                display: inline;
+            }
+        }
+        .logo{
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
+    <img  class="logoone" src="https://static.leke.cn/images/common/logo/mini-header-logo.png" alt="" />
+    <img class="logotwo" src="https://static.leke.cn/images/common/logo/mini-header-logo-new-2.png" alt="" />
+    <img class="logo" src="https://static.leke.cn/images/common/logo/mini-header-logo.png" srcset="https://static.leke.cn/images/common/logo/mini-header-logo.png 1x, https://static.leke.cn/images/common/logo/mini-header-logo-new-2.png 2x" alt="" >
     <script>
         const foo = 'bar';
         const baz = {foo};
@@ -23,6 +41,24 @@
         }
 
         console.log(f(1, 2)) // Object {x: 1, y: 2}
+        function Foo() {
+            getName = function () { console.log (1); };
+            return this;
+        }
+        Foo.getName = function () { console.log (2);};
+        Foo.prototype.getName = function () { console.log (3);};
+        var getName = function () { console.log (4);};
+        function getName() { console.log (5);}
+
+        //请写出以下输出结果：
+        console.log('111---Foo.getName()',Foo.getName());
+        console.log('222---getName()',getName());
+        console.log('333---Foo().getName()',Foo().getName());
+        console.log('444---getName()',getName());
+        console.log('555---new Foo.getName()',new Foo.getName());
+        console.log('666---new Foo().getName()',new Foo().getName());
+        console.log('777---new new Foo().getName()',new new Foo().getName());
+
     </script>
     
 </body>
