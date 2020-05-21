@@ -41,11 +41,12 @@ export const BaseTransform = Loadable({
     loading: Loading,
     timeout: timeout
 })
-// export const TSDemo = Loadable({
-//     loader: () => import("@containers/other/TSDemo"),
-//     loading: Loading,
-//     timeout: timeout
-// });
+//hooks demo
+export const HooksDemo = Loadable({
+    loader: () => import("@containers/other/TSDemo"),
+    loading: Loading,
+    timeout: timeout
+});
 // export const ProductDetail = Loadable({
 //     loader: () => import("@containers/Mall/ProductDetail"),
 //     loading: Loading,

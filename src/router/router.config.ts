@@ -1,4 +1,4 @@
-import { Login, HomePage, Message, Friends, DragPage, BaseTransform} from '@routers/index';
+import { Login, HomePage, Message, Friends, DragPage, BaseTransform,HooksDemo} from '@routers/index';
 const routerConfig = [
     {
         path: '/',
@@ -28,6 +28,10 @@ const routerConfig = [
     {
         path: '/baseTransform',
         component: BaseTransform,
+        exact: true
+    }, {
+        path: '/HooksDemo',
+        component: HooksDemo,
         exact: true
     },
     // {
