@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "antd";
-import Demo from './demo'
+// import Demo from './demo'
 // // import Test from './Test';
 // import Demohooks from './demo';
 // // import Demopagecom from './page/demo';
@@ -42,7 +42,7 @@ export default function Test() {
             >
                 测试
             </Button>
-            <Demo value={state} />
+            {/* <Demo value={state} /> */}
         </div>
     );
 }

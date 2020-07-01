@@ -1,0 +1,23 @@
+.wrapCard{
+    width: 300px;
+    height: 400px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #000;
+    font-size: 20px;
+    background-color: #fff;
+    .childWrap{
+        width: 200px;
+        height: 200px;
+        border: 1px solid #000;
+        .wrapItem{
+            display: inline-block;
+            min-width: 20px;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid red;
+            margin: 4px;
+        }
+    }
+    
+}

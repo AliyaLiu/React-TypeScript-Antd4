@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.parent{
+    height: 100px;
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+}
+.parent div{
+    height: 50px;
+    border: 1px solid green;
+    flex: 3;
+    margin: 0 10px;
+}
+.parent div:last-child{
+    align-self: end;
+    margin-right: 0;
+}
+</style>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+</html>
