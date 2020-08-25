@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let arr =[1,2,3,1,1,'1','true','false','','undefined',undefined,'null',null,[],'[]',,[],{},{},'{}',NaN,NaN]
+        console.log(arr);
+        console.log([...new Set(arr)]);
+
+        function SuperType(){
+            this.property = true;
+        }
+        SuperType.prototype.getSuperValue = function(){
+            return this.property;
+        }
+        function SubType(){
+            this.subproperty = false;
+        }
+        // let shili1 = new SuperType();
+        SubType.prototype=new SuperType();
+        SubType.prototype.getSubValue =function(){
+            return this.subproperty;
+        }
+        var newshili = new SubType();
+        // alert(instance.getSuperValue());//true
+
+        
+        // function arrayList(arr,num){
+        //     let arrnew = [...new Set(arr)].sort();
+        //     let newarr = [];
+        //     for( let i=0;i<arrnew.length;i++ ){
+        //         console.log(i);
+        //     }
+        //     console.log(arrnew)
+        // }
+        // arrayList([1,2,0,1,2,1]);
+        
+        function windowFunc(){
+            const rowFunc = ()=>{
+                console.log('111rowFunc--this',this);
+            }
+            rowFunc();
+            console.log('222windowFunc--this',this);
+        }
+        // const windowFunc=()=>{
+        //     rowFunc();
+        //     console.log('222windowFunc--this',this);
+        // }
+        windowFunc();
+        
+        console.log('333window--this',this);
+
+        var elements = [
+            'Hydrogen',
+            'Helium',
+            'Lithium',
+            'Beryllium'
+        ];
+
+        elements.map(function(element) { 
+            return element.length; 
+        }); // 返回数组：[8, 6, 7, 9]
+
+        // 上面的普通函数可以改写成如下的箭头函数
+        elements.map((element) => {
+            console.log('element.length',element.length) ;
+        }); // [8, 6, 7, 9]
+        console.log('elements',elements);
+
+        let arrList =[1,1,3,2,4,1,5,0,6,-1];
+        function chuliarr(arr,target){
+            let erweiarr=[];
+            let newarr=[...new Set(arr)];
+            for(let i=0;i<newarr.length;i++){
+                for( let j=1;j<newarr.length;j++ ){
+                    if( j>i &&  newarr[i]+newarr[j] === target ){
+                        erweiarr.push([newarr[i],newarr[j]]);
+                    }   
+                }
+            }
+            return erweiarr;
+        }
+        chuliarr(arrList,5);
+
+    </script>
+</body>
+</html>

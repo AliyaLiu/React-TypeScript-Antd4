@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .content{
+        height: 200px;
+        border: 1px solid red;
+        display: flex;
+        align-items: center;
+    }
+    .content div{
+        width: 100px;
+        height: 100px;
+        margin: 0 5px;
+        border: 1px solid #000;
+    }
+    .content div:last-child{
+       align-self: flex-start;
+    }
+</style>
+
+<body>
+    <div class="content">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script>
+        function fn(url, name) {
+            if( url ){
+                let hasArr = url.split('?')[1].split('&') || [];
+                let hashMap = {};
+                let getparams = '';
+                for( let i=0;i<hasArr.length;i++ ){
+                    let item=hasArr[i].split('=');
+                    let key=item[0];
+                    let value = item[1];
+                    hashMap[key] = value;
+                }
+                if( name ){
+                    getparams = hashMap[name];
+                }
+                return getparams;
+            }
+        }
+        fn("https://a.com/?a=1&b=2","b"); // 1
+    </script>
+    <script>
+        function walk(list) {
+            let returnArray=[];
+            let newList = JSON.parse(JSON.stringify(list));
+            if (Array.isArray(newList)) {
+                for (let i=0; i<newList.length; i++) {
+                    let item = newList[i]
+                    returnArray.push(item);
+                    if (item.children){
+                        returnArray = returnArray.concat( walk(item.children) );
+                        delete item.children;
+                    }
+                }
+            } 
+            return returnArray;
+        }
+        console.log(walk(  [
+            {
+            id: 1,
+            text: 'text1',
+            children: [
+            {
+            id: 2,
+            text: 'text2',
+            parentId: 1,
+            children: [
+            {
+            id: 4,
+            text: 'text4',
+            parentId: 2
+            }
+            ]
+            },
+            {
+            id: 3,
+            text: 'text3',
+            parentId: 1
+            }
+            ]
+            }
+            ] )) ;
+    </script>
+</body>
+</html>

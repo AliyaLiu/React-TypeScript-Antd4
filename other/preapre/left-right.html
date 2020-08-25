@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 利用flex */
+    .content{ 
+        display: flex; 
+        height: 400px; 
+        background-color: thistle;
+        justify-content: space-around;
+        align-items: center;
+     }
+    .content div{ height: 100px; background-color: lightblue; }
+    .content .left{ width: 100px;  }
+    /* .content .right{ background-color: yellowgreen; flex: 1; } */
+    /* 利用定位 */
+    /* .content{ position: relative; } */
+</style>
+<body>
+    <style>
+         /* 利用flex */
+        .content-flex{ 
+            display: flex; 
+            /* height: 400px;  */
+            /* background-color: thistle; */
+            /* justify-content: space-around; */
+            /* align-items: center; */
+            margin-bottom: 10px;
+        }
+        .content-flex div{ height: 100px; background-color: lightblue; }
+        .content-flex .left{ width: 100px;  }
+        .content-flex .right{ background-color: yellowgreen; flex: 1; }
+    </style>
+    <div class="content-flex">
+        <div class="left">left</div>
+        <!-- <div class="left">left</div>
+        <div class="left">left</div>
+        <div class="left">left</div> -->
+        <div class="right">right</div>
+    </div>
+        <!--  利用定位 -->
+    <style>
+        .content-relative{ position: relative; height: 120px; }
+        .content-relative div{ height: 100px; background-color: teal; position: absolute; }
+        .content-relative .left{ width: 100px; }
+        .content-relative .right{ top: 0; right: 0; left: 100px; background-color: thistle; }
+    </style>
+    <div class="content-relative">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+        <!--  利用浮动 -->
+    <style>
+        .content-float{ position: relative; }
+        .content-float div{ height: 100px; background-color: teal; }
+        .content-float .left{ width: 100px; float: left; }
+        .content-float .right{ background-color: thistle; margin-left: 100px; }
+    </style>
+    <div class="content-float">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+
+     <!--  利用table -->
+     <style>
+        .content-table{ width:100%; display: table; margin: 10px 0; }
+        .content-table div{ height: 100px; background-color: teal; display: table-cell; }
+        .content-table .left{ width: 100px; }
+        .content-table .right{ background-color: thistle; }
+    </style>
+    <div class="content-table">
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+</body>
+</html>
