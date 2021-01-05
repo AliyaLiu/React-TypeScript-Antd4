@@ -91,7 +91,7 @@
     "@typescript-eslint/parser": "^1.6.0",
     "antd": "^4.0.0",
     "antd-mobile": "^2.2.8",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "emoji-mart": "^3.0.0",
     "faker": "^4.1.0",
     "immutability-helper": "^3.0.1",
